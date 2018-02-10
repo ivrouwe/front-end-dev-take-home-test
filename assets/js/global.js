@@ -2,7 +2,7 @@
 
 	function populateElement(selector, rawTemplate, rawData) {
 		var element = $(selector),
-			placeholderChildren = element.children().not('#' + element.attr('aria-labelledby')),
+			placeholderChildren = element.children().not('#' + element.attr('aria-labelledby')).not('#' + element.attr('aria-describedby')),
 			template = Handlebars.compile(rawTemplate),
 			content = $.parseHTML(template(rawData));
 
