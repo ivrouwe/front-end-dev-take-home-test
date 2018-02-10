@@ -1,20 +1,17 @@
 (function($) {
-
-	function populateElement(selector, rawTemplate, rawData) {
+	function populateElement(selector, template, data) {
 		var element = $(selector),
-			placeholderChildren = element.children().not('#' + element.attr('aria-labelledby')),
-			template = Handlebars.compile(rawTemplate),
-			content = $.parseHTML(template(rawData));
+			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby')),
+			content = $.parseHTML(Handlebars.compile(template)(data));
 
-		placeholderChildren.remove();
-		element.append(content);
+		placeholderContent.replaceWith(content);
 	}
 
-	$.get('assets/data/photos.json', function(data) {
-		var photoData = data;
-
-		$.get('assets/templates/photo-gallery-list.handlebars', function(data) {
-			populateElement('#photo-gallery', data, photoData);
+	$.get('assets/data/terms.json', function(terms) {
+		$.get('templates/terms-list.handlebars', function(termsList) {
+			populateElement('#photo-gallery', termsList, terms);
 		});
 	});
+
+	$('html').attr('data-js', 'true');
 })(jQuery);

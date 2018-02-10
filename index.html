@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-CA">
 <head>
 	<meta charset="utf-8">
 	<title>Front-end Dev. Take Home Test | Ivan Vrouwe</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/foundation.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		img,
+		iframe {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
 </head>
+
 <body>
 	<header>
 		<h1>Front-end Dev. Take Home Test</h1>
@@ -24,17 +34,19 @@
 				</li>
 
 				<li>
-					<a href="#bonus-basic-tod-app-crud"><em>Bonus:</em> Basic TOD App (CRUD)</a>
+					<a href="#bonus-basic-tod-app-crud"><em>Bonus:</em> Basic <del>TOD</del><ins>TODO</ins> App (CRUD)</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
 
 	<main id="main">
-		<section id="photo-gallery" aria-labelledby="photo-gallery-heading">
+		<section class="photo-gallery" id="photo-gallery" aria-labelledby="photo-gallery-heading" aria-describedby="photo-gallery-description">
 			<h2 id="photo-gallery-heading">Photo Gallery</h2>
 
-			<p>There are no images in the Photo Gallery.</p>
+			<p id="photo-gallery-description">A visual dictionary of terms paired with their definitions.</p>
+
+			<p>There are no terms to list in the Photo Gallery.</p>
 		</section>
 
 		<section id="maps" aria-labelledby="maps-heading">
@@ -45,9 +57,9 @@
 	</main>
 
 	<aside id="bonus-basic-tod-app-crud" aria-labelledby="bonus-basic-tod-app-crud-heading">
-		<h2 id="bonus-basic-tod-app-crud-heading"><em>Bonus:</em> Basic TOD App (CRUD)</h2>
+		<h2 id="bonus-basic-tod-app-crud-heading"><em>Bonus:</em> Basic <del>TOD</del><ins>TODO</ins> App (CRUD)</h2>
 
-		<p>The Basic TOD App (CRUD) is currently unavailable.</p>
+		<p>The Basic TODO App (CRUD) is currently unavailable.</p>
 	</aside>
 	
 	<script src="assets/js/jquery-3.3.1.min.js"></script>
