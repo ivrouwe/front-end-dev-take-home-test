@@ -3,7 +3,7 @@
 	function populateElement(selector, rawTemplate, rawData) {
 		var element = $(selector),
 			placeholderChildren = element.children().not('#' + element.attr('aria-labelledby')),
-			template = Handlebars.compile(rawTemplate);
+			template = Handlebars.compile(rawTemplate),
 			content = $.parseHTML(template(rawData));
 
 		placeholderChildren.remove();
