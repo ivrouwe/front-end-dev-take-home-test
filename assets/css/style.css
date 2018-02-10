@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.photo-gallery {
+	font-size: 1.2rem;
+}
+
+[data-js="true"] .photo-gallery {
+	line-height: 1.8;
+}
+
+.photo-gallery dfn {
+	font-style: normal;
+}
+
+.photo-gallery dl {
+	margin: 0;
+}
+
+.photo-gallery dd {
+	margin-left: 0;
+}
+
+.photo-gallery ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.photo-gallery li + li {
+	margin-top: 0.4rem;
+}
+
+.photo {
+	width: 100%;
+	height: 80vw;
+	padding: 1rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.photo-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.photo-image img {
+	display: block;
+	width: auto;
+	height: 100%;
+}
+
+.photo-name,
+.photo-description {
+	padding: 0 1rem;
+	border-radius: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.6);
+	position: relative;
+	z-index: 1;
+}
+
+.photo-name {
+	width: auto;
+	font-weight: 600;
+}
+
+.photo-description {
+	width: 100%;
+}
+
+@media (min-width: 40em) {
+	.photo-gallery {
+		font-size: 1.5rem;
+	}
+}
