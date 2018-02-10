@@ -1,0 +1,11 @@
+<ul>
+	{{#each terms}}
+		<li data-contains="{{name}}">
+			<dl class="term" data-name="{{name}}">
+				<dt class="term-name"><dfn>{{name}}</dfn></dt>
+				<dt class="term-image"><dfn><img src="{{img}}" alt="" role="presentation"></dfn></dt>
+				<dd class="term-description" tabindex="0">{{description}}</dd>
+			</dl>
+		</li>
+	{{/each}}
+</ul>
