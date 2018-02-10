@@ -1,0 +1,44 @@
+{
+  "photos": [
+    {
+      "img": "//c1.staticflickr.com/5/4120/4753629401_a863511b1a_b.jpg",
+      "name": "Mountains",
+      "description" : "a large natural elevation of the earth's surface rising abruptly from the surrounding level; a large steep hill."
+    },
+    {
+      "img": "http://c4.staticflickr.com/4/3866/14990729749_7cc666442d_h.jpg",
+      "name": "Lighthouse",
+      "description": "a tower or other structure containing a beacon light to warn or guide ships at sea."
+    },
+    {
+      "img": "http://c4.staticflickr.com/4/3836/15075634379_b6333206ae_h.jpg",
+      "name": "Castle",
+      "description": "a large building or group of buildings fortified against attack with thick walls, battlements, towers, and in many cases a moat."
+    },
+    {
+      "img": "http://c4.staticflickr.com/4/3926/15290932301_0a0b827957_h.jpg",
+      "name": "Church",
+      "description": "a building used for public Christian worship."
+    },
+    {
+      "img": "http://c1.staticflickr.com/9/8298/7903246770_619baad842_h.jpg",
+      "name": "Old Barn",
+      "description": "a large farm building used for storing grain, hay, or straw or for housing livestock."
+    },
+    {
+      "img": "http://c1.staticflickr.com/9/8029/7916384484_0e9f011b40_h.jpg",
+      "name": "Maple Leaf",
+      "description": "the leaf of the maple, used as an emblem of Canada."
+    },
+    {
+      "img": "http://c4.staticflickr.com/4/3853/15015563928_78e4e4f346_h.jpg",
+      "name": "Horse",
+      "description": "a solid-hoofed plant-eating domesticated mammal with a flowing mane and tail, used for riding, racing, and to carry and pull loads."
+    },
+    {
+      "img": "http://c3.staticflickr.com/3/2843/11322991016_3b79f3596b_b.jpg",
+      "name": "Bear",
+      "description": "Bears are classified as caniforms, or doglike carnivorans, with the pinnipeds being their closest living relatives."
+    }
+  ]
+}
