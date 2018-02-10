@@ -9,7 +9,7 @@
 	list-style: none;
 }
 
-.photo-gallery li + li {
+.photo-gallery .grid-x .cell + .cell {
 	margin-top: 0.4rem;
 }
 
@@ -85,7 +85,21 @@
 }
 
 @media (min-width: 40em) {
+	.photo-gallery .grid-x .cell {
+		flex: 0 0 calc(50% - 0.4rem);
+	}
+
+	.photo-gallery .grid-x .cell + .cell {
+		margin-top: 0;
+		margin-left: 0.4rem;
+	}
+
+	.photo-gallery .grid-x .cell + .cell ~ .cell {
+		margin-top: 0.4rem;
+	}
+
 	.term {
+		height: 40vw;
 		font-size: 1.5rem;
 	}
 }
