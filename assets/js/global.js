@@ -17,4 +17,6 @@
 			populateElement('#photo-gallery', data, photoData);
 		});
 	});
+
+	$('html').attr('data-js', 'true');
 })(jQuery);
