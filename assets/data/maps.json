@@ -1,0 +1,12 @@
+{
+	"maps" : [
+			{
+				"name": "Edmonton, Alberta",
+				"center": {
+					"lat": 53.5444,
+					"lng": -113.4909
+				},
+				"zoom": 10
+			}
+		]
+}
