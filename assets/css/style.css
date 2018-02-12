@@ -72,6 +72,25 @@ body {
 	overflow-y: auto;
 }
 
+.maps ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.map {
+	margin: 0;
+}
+
+.map dd {
+	margin-left: 0;
+}
+
+.map-content {
+	width: 100%;
+	max-width: 18.75rem;
+	height: 18.75rem;
+}
+
 @media (min-width: 20em) {
 	.term {
 		font-size: 1.25rem;
