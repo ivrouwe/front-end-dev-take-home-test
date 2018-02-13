@@ -43,8 +43,23 @@
 }
 
 body {
-	padding: 0.75rem;
 	font-family: initial !important;
+}
+
+body > header,
+main,
+body > aside {
+	padding: 0 0.75rem;
+}
+
+body > header {
+	padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+	font-family: sans-serif;
+	background-color: #1194e0;
+}
+
+body > header h1 {
+	color: #fff;
 }
 
 h1 {
@@ -58,6 +73,49 @@ h4,
 h5,
 h6 {
 	text-align: center;
+}
+
+.major-navigation ul {
+	padding-left: 0;
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.major-navigation li {
+	margin: 0.5rem;
+	text-align: center;
+}
+
+.major-navigation a {
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	display: block;
+	text-decoration: none;
+	background-color: #666;
+	color: #fff;
+	-webkit-transition: color 0.05s ease-in, background-color 0.05s ease-in;
+	-o-transition: color 0.05s ease-in, background-color 0.05s ease-in;
+	transition: color 0.05s ease-in, background-color 0.05s ease-in;
+}
+
+.major-navigation a:visited {
+	color: #fff;
+}
+
+.major-navigation a:focus,
+.major-navigation a:hover {
+	background-color: #000;
+	color: #d3d3d3;
+	-webkit-transition: color 0.05s ease-in, background-color 0.05s ease-in;
+	-o-transition: color 0.05s ease-in, background-color 0.05s ease-in;
+	transition: color 0.05s ease-in, background-color 0.05s ease-in;
 }
 
 [aria-describedby] [id*="description"] {
@@ -298,6 +356,16 @@ h6 {
 }
 
 @media (min-width: 40em) {
+	body > header,
+	main,
+	body > aside {
+		padding: 0 1.5rem;
+	}
+
+	body > header {
+		padding: 1.5rem 1.5rem 1.5rem 0.75rem;
+	}
+
 	.photo-gallery .grid-x .cell {
 		-webkit-box-flex: 0;
 			-ms-flex: 0 0 calc(50% - 0.4rem);
@@ -334,5 +402,20 @@ h6 {
 	.maps-list > li + li {
 		margin-top: 0;
 		margin-left: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.major-navigation a {
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+
+	.major-navigation a:focus,
+	.major-navigation a:hover {
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
 	}
 }
