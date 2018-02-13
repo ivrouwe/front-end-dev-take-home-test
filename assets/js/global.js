@@ -118,6 +118,7 @@
 					marker.addListener('click', function() {
 						var restaurantData,
 							cuisines,
+							priceRange,
 							index;
 
 						// Build an infowindow and display the Restaurant's data
@@ -162,8 +163,16 @@
 							}
 
 							if(restaurant.price_range && restaurant.price_range !== null) {
-								restaurantData.append('<dt>Price Range</dt>');
-								restaurantData.append('<dd>' + parseInt(restaurant.price_range) + '</dd>');
+								if(restaurant.currency && restaurant.currency !== '') {
+									priceRange = '';
+									
+									for (index = 0; index < parseInt(restaurant.price_range); index++) {
+										priceRange += restaurant.currency.trim();
+									}
+
+									restaurantData.append('<dt>Price Range</dt>');
+									restaurantData.append('<dd>' + priceRange + '</dd>');
+								}
 							}
 
 							if(restaurant.offers && restaurant.offers.length) {
