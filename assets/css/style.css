@@ -154,6 +154,7 @@ h6 {
 }
 
 .term dfn {
+	display: block;
 	font-style: normal;
 }
 
@@ -161,7 +162,7 @@ h6 {
 	margin-left: 0;
 }
 
-.term-image {
+.term-image dfn {
 	position: absolute;
 	top: 0;
 	right: 0;
