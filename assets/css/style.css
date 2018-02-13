@@ -1,7 +1,8 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 }
 
 .visually-hidden {
@@ -27,7 +28,6 @@
 	right: 130%;
 	text-align: center;
 	background-color: #0000ff !important;
-	font-family: 'Open Sans', sans-serif;
 	font-size: 1rem;
 	text-transform: none;
 	font-style: normal;
@@ -61,10 +61,19 @@ body {
 	margin: 0;
 	padding: 1rem;
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+			flex-direction: column;
+	-webkit-box-align: start;
+		-ms-flex-align: start;
+			align-items: flex-start;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
 }
 
 .term dfn {
@@ -148,16 +157,29 @@ body {
 }
 
 .map .info-window header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row-reverse;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+		-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
 }
 
 .map .info-window header .restaurant-thumbnail,
 .map .info-window header a {
-	flex: 0 0 80px;
+	-webkit-box-flex: 0;
+		-ms-flex: 0 0 5rem;
+			flex: 0 0 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
 }
 
 .map .info-window header .restaurant-thumbnail img,
@@ -165,10 +187,6 @@ body {
 	width: 100%;
 	height: auto;
 	display: block;
-}
-
-.map .info-window dl {
-
 }
 
 .map .info-window dt {
@@ -220,7 +238,9 @@ body {
 
 @media (min-width: 40em) {
 	.photo-gallery .grid-x .cell {
-		flex: 0 0 calc(50% - 0.4rem);
+		-webkit-box-flex: 0;
+			-ms-flex: 0 0 calc(50% - 0.4rem);
+				flex: 0 0 calc(50% - 0.4rem);
 	}
 
 	.photo-gallery .grid-x .cell + .cell {
