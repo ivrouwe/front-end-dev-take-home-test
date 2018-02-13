@@ -391,3 +391,14 @@ h6 {
 		margin-left: 1rem;
 	}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	.major-navigation a {
+		transition: none;
+	}
+
+	.major-navigation a:focus,
+	.major-navigation a:hover {
+		transition: none;
+	}
+}
