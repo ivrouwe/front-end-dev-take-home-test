@@ -1,26 +1,33 @@
 (function($) {
-	function populateElement(selector, template, data) {
+	function populateElement(selector, content) {
 		var element = $(selector),
-			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby')),
-			content = $.parseHTML(Handlebars.compile(template)(data));
+			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby'));
+			
+			if (placeholderContent.length) {
+				placeholderContent.replaceWith(content);
+			} else {
+				element.append(content);
+			}
+	}
 
-		placeholderContent.replaceWith(content);
+	function templateContent(template, data) {
+		return $.parseHTML(Handlebars.compile(template)(data));
 	}
 
 	$.get('assets/data/terms.json', function(terms) {
 		$.get('templates/terms-list.handlebars', function(termsList) {
-			populateElement('#photo-gallery', termsList, terms);
+			populateElement('#photo-gallery', templateContent(termsList, terms));
 		});
 	});
 
 	$.get('assets/data/maps.json', function(data) {
 		var element = $('#maps'),
-			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby')),
-			maps,
+			maps = data.maps,
 			defaultZoom = 10;
 
-		maps = data.maps;
-		placeholderContent.replaceWith('<ul></ul>');
+		if(!element.children('.maps-list').length) {
+			populateElement('#maps', '<ul class="maps-list"></ul>');
+		}
 
 		maps.forEach(function(map) {
 			var output;
@@ -47,6 +54,52 @@
 				});
 				polygonOutput.setMap(output);
 			}
+		});
+	});
+
+	$.get('assets/data/maps-preformatted.json', function(data) {
+		var element = $('#maps'),
+			maps = data.resto,
+			defaultZoom = 11;
+
+		if(!element.children('.maps-list').length) {
+			populateElement('#maps', '<ul class="maps-list"></ul>');
+		}
+
+		maps.forEach(function(map) {
+			var output,
+				name = 'Untitled Map';
+
+			if(map.location.title && map.location.title !== '') {
+				name = "A map of " + map.location.title;
+
+				if(map.nearby_restaurants) {
+					name = "A map of restaurants near " + map.location.title;
+				}
+
+				if(map.location.city_name && map.location.city_name !== '') {
+					name += ' in ' + map.location.city_name;
+				}
+
+				if(map.location.country_name && map.location.country_name !== '') {
+					name += ' (' + map.location.country_name + ')';
+				}
+
+			}
+
+			if (!map.location.zoom) {
+				map.location.zoom = defaultZoom;
+			}
+
+			element.children('ul').append('<li data-contains="' + name + '"><dl class="map" data-name="' + name + '"><dt class="map-name">' + name + '</dt><dd class="map-content"></dd></dl></li>');
+			
+			output = new google.maps.Map(element.find('[data-name="' + name + '"] .map-content')[0], {
+				zoom: map.location.zoom,
+				center: {
+					lat: parseFloat(map.location.latitude),
+					lng: parseFloat(map.location.longitude)
+				}
+			});
 		});
 	});
 
