@@ -150,6 +150,7 @@ h6 {
 	-webkit-box-pack: justify;
 		-ms-flex-pack: justify;
 			justify-content: space-between;
+	overflow: hidden;
 }
 
 .term dfn {
@@ -374,16 +375,18 @@ h6 {
 
 	.photo-gallery .grid-x .cell + .cell {
 		margin-top: 0;
-		margin-left: 0.4rem;
 	}
 
 	.photo-gallery .grid-x .cell + .cell ~ .cell {
 		margin-top: 0.4rem;
 	}
 
+	.photo-gallery .grid-x .cell:nth-of-type(even) {
+		margin-left: 0.4rem;
+	}
+
 	.term {
 		height: 40vw;
-		font-size: 1.5rem;
 	}
 
 	.maps-list {
@@ -402,6 +405,23 @@ h6 {
 	.maps-list > li + li {
 		margin-top: 0;
 		margin-left: 1rem;
+	}
+}
+
+@media (min-width: 60em) {
+	.term {
+		height: 22.5vw;
+		line-height: 1;
+	}
+
+	.term-name {
+		padding-top: 0.2rem;
+		padding-bottom: 0.2rem;
+	}
+
+	.term-image img {
+		width: 100%;
+		height: auto;
 	}
 }
 
