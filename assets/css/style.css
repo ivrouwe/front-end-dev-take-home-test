@@ -91,6 +91,60 @@ body {
 	height: 18.75rem;
 }
 
+.info-window {
+	padding: 0 2rem 0 1rem;
+}
+
+.info-window h1 {
+	margin-left: 0.5rem;
+	text-align: center;
+}
+
+.info-window header {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.info-window header .restaurant-thumbnail,
+.info-window header a {
+	flex: 0 0 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.info-window header .restaurant-thumbnail img,
+.info-window header a > img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.info-window dl {
+
+}
+
+.info-window dt {
+	font-weight: 600;
+}
+
+.info-window dt::after {
+	content: ":";
+	margin-right: 0.2em;
+}
+
+.info-window dt ~ dt {
+	margin-top: 1rem;
+}
+
+.info-window dd {
+	display: inline-block;
+}
+
+.info-window dd + dd::before {
+	content: ", ";
+}
+
 @media (min-width: 20em) {
 	.term {
 		font-size: 1.25rem;
