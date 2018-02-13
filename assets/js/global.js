@@ -3,11 +3,11 @@
 		var element = $(selector),
 			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby'));
 			
-			if (placeholderContent.length) {
-				placeholderContent.replaceWith(content);
-			} else {
-				element.append(content);
-			}
+		if (placeholderContent.length) {
+			placeholderContent.replaceWith(content);
+		} else {
+			element.append(content);
+		}
 	}
 
 	function templateContent(template, data) {
@@ -108,6 +108,7 @@
 						infoWindow,
 						infoWindowContent;
 
+					// Create a Marker for each Restaurant in the array
 					marker = new google.maps.Marker({
 						position: new google.maps.LatLng(parseFloat(restaurant.location.latitude), parseFloat(restaurant.location.longitude)),
 						icon: 'https://maps.google.com/mapfiles/kml/pal2/icon40.png',
@@ -117,8 +118,10 @@
 					marker.addListener('click', function() {
 						var restaurantData,
 							cuisines,
+							priceRange,
 							index;
 
+						// Build an infowindow and display the Restaurant's data
 						if(restaurant.name && restaurant.id && restaurant.name !== '' && restaurant.id !== null) {
 							infoWindowContent = $(document.createElement('article'));
 							infoWindowContent.addClass('info-window');
@@ -160,8 +163,16 @@
 							}
 
 							if(restaurant.price_range && restaurant.price_range !== null) {
-								restaurantData.append('<dt>Price Range</dt>');
-								restaurantData.append('<dd>' + parseInt(restaurant.price_range) + '</dd>');
+								if(restaurant.currency && restaurant.currency !== '') {
+									priceRange = '';
+									
+									for (index = 0; index < parseInt(restaurant.price_range); index++) {
+										priceRange += restaurant.currency.trim();
+									}
+
+									restaurantData.append('<dt>Price Range</dt>');
+									restaurantData.append('<dd>' + priceRange + '</dd>');
+								}
 							}
 
 							if(restaurant.offers && restaurant.offers.length) {
