@@ -218,8 +218,6 @@
 
 							}
 
-							console.log(infoWindowContent[0]);
-
 							infoWindow = new google.maps.InfoWindow({
 								content: infoWindowContent[0],
 							});
