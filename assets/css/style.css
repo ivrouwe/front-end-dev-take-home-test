@@ -5,27 +5,6 @@
 			box-sizing: border-box;
 }
 
-body {
-	padding: 0.75rem;
-}
-
-h1 {
-	margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	text-align: center;
-}
-
-[aria-describedby] [id*="description"] {
-	text-align: center;
-}
-
 .visually-hidden {
 	width: 0.0625rem;
 	height: 0.0625rem;
@@ -64,7 +43,25 @@ h6 {
 }
 
 body {
+	padding: 0.75rem;
 	font-family: initial !important;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-align: center;
+}
+
+[aria-describedby] [id*="description"] {
+	text-align: center;
 }
 
 .photo-gallery ul {
