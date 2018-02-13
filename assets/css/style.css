@@ -216,7 +216,7 @@ body {
 }
 
 .map .info-window {
-	padding: 0 2rem 0 1rem;
+	padding: 0.5rem 2rem 1rem 1rem;
 }
 
 .map .info-window ul {
@@ -229,25 +229,12 @@ body {
 }
 
 .map .info-window h1 {
-	margin-left: 0.5rem;
 	text-align: center;
-}
-
-.map .info-window header {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-		-ms-flex-direction: row-reverse;
-			flex-direction: row-reverse;
 }
 
 .map .info-window header .restaurant-thumbnail,
 .map .info-window header a {
-	-webkit-box-flex: 0;
-		-ms-flex: 0 0 5rem;
-			flex: 0 0 5rem;
+	margin-top: 0.5rem;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -261,7 +248,7 @@ body {
 
 .map .info-window header .restaurant-thumbnail img,
 .map .info-window header a > img {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 }
