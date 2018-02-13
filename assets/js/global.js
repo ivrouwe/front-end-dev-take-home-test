@@ -128,14 +128,17 @@
 							infoWindowContent.addClass('restaurant');
 							infoWindowContent.attr('id', 'restaurant-' + restaurant.id.trim());
 							infoWindowContent.attr('aria-labelledby', 'restaurant-' + restaurant.id.trim() + '-heading');
-							infoWindowContent.append('<header><h1 id="' + 'restaurant-' + restaurant.id.trim() + '-heading">' + restaurant.name + '</h1></header>');
 
 							if(restaurant.thumb && restaurant.thumb !== '') {
+								infoWindowContent.append('<header><h1 id="' + 'restaurant-' + restaurant.id.trim() + '-heading">' + restaurant.name + '</h1></header>');
+
 								if(restaurant.featured_image && restaurant.featured_image !== '') {
 									infoWindowContent.children('header').append('<a href="' + restaurant.featured_image.trim() + '"><img src="' + restaurant.thumb.trim() + '" alt="View Featured Image"></a>');
 								} else {
 									infoWindowContent.children('header').append('<div class="restaurant-thumbnail"><img src="' + restaurant.thumb.trim() + '" alt="" role="presentation"</div>');
 								}
+							} else {
+								infoWindowContent.append('<h1 id="' + 'restaurant-' + restaurant.id.trim() + '-heading">' + restaurant.name + '</h1>');
 							}
 
 							infoWindowContent.append('<dl class="restaurant-data"></dl>');

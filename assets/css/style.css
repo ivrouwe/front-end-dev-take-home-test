@@ -5,27 +5,6 @@
 			box-sizing: border-box;
 }
 
-body {
-	padding: 0.75rem;
-}
-
-h1 {
-	margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	text-align: center;
-}
-
-[aria-describedby] [id*="description"] {
-	text-align: center;
-}
-
 .visually-hidden {
 	width: 0.0625rem;
 	height: 0.0625rem;
@@ -64,7 +43,25 @@ h6 {
 }
 
 body {
+	padding: 0.75rem;
 	font-family: initial !important;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-align: center;
+}
+
+[aria-describedby] [id*="description"] {
+	text-align: center;
 }
 
 .photo-gallery ul {
@@ -151,11 +148,11 @@ body {
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
 	-webkit-box-align: stretch;
-	    -ms-flex-align: stretch;
-	        align-items: stretch;
+		-ms-flex-align: stretch;
+			align-items: stretch;
 }
 
 .maps-list > li + li {
@@ -173,11 +170,11 @@ body {
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: reverse;
-	    -ms-flex-direction: column-reverse;
-	        flex-direction: column-reverse;
+		-ms-flex-direction: column-reverse;
+			flex-direction: column-reverse;
 	-webkit-box-align: start;
-	    -ms-flex-align: start;
-	        align-items: flex-start;
+		-ms-flex-align: start;
+			align-items: flex-start;
 }
 
 .map dd {
@@ -197,17 +194,17 @@ body {
 	text-align: center;
 	background-color: lightblue;
 	-webkit-box-flex: 1;
-	    -ms-flex: 1 0 auto;
-	        flex: 1 0 auto;
+		-ms-flex: 1 0 auto;
+			flex: 1 0 auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+		-ms-flex-align: center;
+			align-items: center;
 }
 
 .map-content {
@@ -216,7 +213,7 @@ body {
 }
 
 .map .info-window {
-	padding: 0 2rem 0 1rem;
+	padding: 0.5rem 2rem 1rem 1rem;
 }
 
 .map .info-window ul {
@@ -229,25 +226,12 @@ body {
 }
 
 .map .info-window h1 {
-	margin-left: 0.5rem;
 	text-align: center;
-}
-
-.map .info-window header {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-		-ms-flex-direction: row-reverse;
-			flex-direction: row-reverse;
 }
 
 .map .info-window header .restaurant-thumbnail,
 .map .info-window header a {
-	-webkit-box-flex: 0;
-		-ms-flex: 0 0 5rem;
-			flex: 0 0 5rem;
+	margin-top: 0.5rem;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -261,7 +245,7 @@ body {
 
 .map .info-window header .restaurant-thumbnail img,
 .map .info-window header a > img {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 }
@@ -333,18 +317,18 @@ body {
 		height: 40vw;
 		font-size: 1.5rem;
 	}
-  
+
 	.maps-list {
 		max-width: none;
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: row;
-		        flex-direction: row;
+			-ms-flex-direction: row;
+				flex-direction: row;
 		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
+			flex-wrap: wrap;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+			-ms-flex-pack: center;
+				justify-content: center;
 	}
 
 	.maps-list > li + li {
