@@ -95,6 +95,15 @@ body {
 	padding: 0 2rem 0 1rem;
 }
 
+.info-window ul {
+	padding-left: initial;
+	list-style: initial;
+}
+
+.info-window li + li {
+	margin-top: 0.5rem;
+}
+
 .info-window h1 {
 	margin-left: 0.5rem;
 	text-align: center;
@@ -133,6 +142,10 @@ body {
 	margin-right: 0.2em;
 }
 
+.info-window dt ~ dd dl {
+	margin-left: 0.5rem;
+}
+
 .info-window dt ~ dt {
 	margin-top: 1rem;
 }
@@ -143,6 +156,12 @@ body {
 
 .info-window dd + dd::before {
 	content: ", ";
+}
+
+.info-window dd + dd.contains-dl::before {
+	content: "";
+	display: block;
+	width: 100%;
 }
 
 @media (min-width: 20em) {

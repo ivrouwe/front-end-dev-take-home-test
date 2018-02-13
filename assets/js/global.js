@@ -164,13 +164,58 @@
 								restaurantData.append('<dd>' + parseInt(restaurant.price_range) + '</dd>');
 							}
 
-
 							if(restaurant.offers && restaurant.offers.length) {
 								restaurantData.append('<dt>Offers</dt>');
 
 								for(index = 0; index < restaurant.offers.length; index++) {
 									restaurantData.append('<dd>' + restaurant.offers[index].trim() + '</dd>');
 								}
+							}
+
+							if(restaurant.user_rating
+								 && restaurant.user_rating.aggregate_rating
+								 && restaurant.user_rating.rating_text
+								 && restaurant.user_rating.rating_color
+								 && restaurant.user_rating.votes
+								 && restaurant.user_rating.aggregate_rating !== ''
+								 && restaurant.user_rating.rating_text !== ''
+								 && restaurant.user_rating.rating_color !== ''
+								 && restaurant.user_rating.votes !== '') {
+								
+								restaurantData.append('<dt>User Rating</dt>');
+								restaurantData.append('<dd style="color: #' + restaurant.user_rating.rating_color.trim() + '">' + restaurant.user_rating.rating_text.trim() + '</dd>');
+								restaurantData.append('<dd class="restaurant-data-user-rating-additional contains-dl"><dl></dl></dd>');
+								restaurantData.children('.restaurant-data-user-rating-additional').children('dl').append('<dt>Aggregate Rating</dt>');
+								restaurantData.children('.restaurant-data-user-rating-additional').children('dl').append('<dd>' + restaurant.user_rating.aggregate_rating.trim() + '</dd>');
+								restaurantData.children('.restaurant-data-user-rating-additional').children('dl').append('<dt>Votes</dt>');
+								restaurantData.children('.restaurant-data-user-rating-additional').children('dl').append('<dd>' + restaurant.user_rating.votes.trim() + '</dd>');
+							}
+
+							if((restaurant.url && restaurant.url !== '')
+								 || (restaurant.menu_url && restaurant.menu_url !== '')
+								 || (restaurant.photos_url && restaurant.photos_url !== '')
+								 || (restaurant.events_url && restaurant.events_url !== '') ) {
+								infoWindowContent.append('<aside class="restaurant-options"><ul></ul></aside>');
+								infoWindowContent.children('.restaurant-options').attr('id', 'restaurant-' + restaurant.id.trim() + '-options');
+								infoWindowContent.children('.restaurant-options').attr('aria-labelledby', 'restaurant-' + restaurant.id.trim() + '-options-heading');
+								infoWindowContent.children('.restaurant-options').prepend('<h2 id="' + 'restaurant-' + restaurant.id.trim() + '-options-heading">Options For Further Action</h2>');
+								
+								if(restaurant.url && restaurant.url !== '') {
+									infoWindowContent.children('.restaurant-options').children('ul').append('<li><a href="' + restaurant.url.trim() + '">View This Restaurant\'s Page On Zomato</a></li>');
+								}
+
+								if(restaurant.menu_url && restaurant.menu_url !== '') {
+									infoWindowContent.children('.restaurant-options').children('ul').append('<li><a href="' + restaurant.menu_url.trim() + '">View This Restaurant\'s Menu On Zomato</a></li>');
+								}
+
+								if(restaurant.photos_url && restaurant.photos_url !== '') {
+									infoWindowContent.children('.restaurant-options').children('ul').append('<li><a href="' + restaurant.photos_url.trim() + '">View This Restaurant\'s Photos On Zomato</a></li>');
+								}
+
+								if(restaurant.events_url && restaurant.events_url !== '') {
+									infoWindowContent.children('.restaurant-options').children('ul').append('<li><a href="' + restaurant.events_url.trim() + '">View This Restaurant\'s Events On Zomato</a></li>');
+								}
+
 							}
 
 							console.log(infoWindowContent[0]);
