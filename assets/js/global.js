@@ -3,11 +3,11 @@
 		var element = $(selector),
 			placeholderContent = element.children().not('#' + element.attr('aria-labelledby') + ', #' + element.attr('aria-describedby'));
 			
-			if (placeholderContent.length) {
-				placeholderContent.replaceWith(content);
-			} else {
-				element.append(content);
-			}
+		if (placeholderContent.length) {
+			placeholderContent.replaceWith(content);
+		} else {
+			element.append(content);
+		}
 	}
 
 	function templateContent(template, data) {
