@@ -108,6 +108,7 @@
 						infoWindow,
 						infoWindowContent;
 
+					// Create a Marker for each Restaurant in the array
 					marker = new google.maps.Marker({
 						position: new google.maps.LatLng(parseFloat(restaurant.location.latitude), parseFloat(restaurant.location.longitude)),
 						icon: 'https://maps.google.com/mapfiles/kml/pal2/icon40.png',
@@ -119,6 +120,7 @@
 							cuisines,
 							index;
 
+						// Build an infowindow and display the Restaurant's data
 						if(restaurant.name && restaurant.id && restaurant.name !== '' && restaurant.id !== null) {
 							infoWindowContent = $(document.createElement('article'));
 							infoWindowContent.addClass('info-window');
