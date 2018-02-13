@@ -129,74 +129,74 @@ body {
 	height: 18.75rem;
 }
 
-.info-window {
+.map .info-window {
 	padding: 0 2rem 0 1rem;
 }
 
-.info-window ul {
+.map .info-window ul {
 	padding-left: initial;
 	list-style: initial;
 }
 
-.info-window li + li {
+.map .info-window li + li {
 	margin-top: 0.5rem;
 }
 
-.info-window h1 {
+.map .info-window h1 {
 	margin-left: 0.5rem;
 	text-align: center;
 }
 
-.info-window header {
+.map .info-window header {
 	display: flex;
 	flex-direction: row-reverse;
 }
 
-.info-window header .restaurant-thumbnail,
-.info-window header a {
+.map .info-window header .restaurant-thumbnail,
+.map .info-window header a {
 	flex: 0 0 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.info-window header .restaurant-thumbnail img,
-.info-window header a > img {
+.map .info-window header .restaurant-thumbnail img,
+.map .info-window header a > img {
 	width: 100%;
 	height: auto;
 	display: block;
 }
 
-.info-window dl {
+.map .info-window dl {
 
 }
 
-.info-window dt {
+.map .info-window dt {
 	font-weight: 600;
 }
 
-.info-window dt::after {
+.map .info-window dt::after {
 	content: ":";
 	margin-right: 0.2em;
 }
 
-.info-window dt ~ dd dl {
+.map .info-window dt ~ dd dl {
 	margin-left: 0.5rem;
 }
 
-.info-window dt ~ dt {
+.map .info-window dt ~ dt {
 	margin-top: 1rem;
 }
 
-.info-window dd {
+.map .info-window dd {
 	display: inline-block;
 }
 
-.info-window dd + dd::before {
+.map .info-window dd + dd::before {
 	content: ", ";
 }
 
-.info-window dd + dd.contains-dl::before {
+.map .info-window dd + dd.contains-dl::before {
 	content: "";
 	display: block;
 	width: 100%;
