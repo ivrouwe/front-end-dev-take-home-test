@@ -236,6 +236,7 @@
 								content: infoWindowContent[0],
 							});
 
+							infoWindow.setOptions({maxWidth: 200});
 							infoWindow.open(output, marker);
 						}
 					});
